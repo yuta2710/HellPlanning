@@ -10,14 +10,13 @@ import {
   closestCorners,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import Column from '../../../components/shared/Column';
-import KanbanBoard from '../../../components/shared/KanbanBoard';
+import Column from '../../../components/shared/ColumnSample';
+import KanbanBoardSample from '../../../components/shared/KanbanBoardSample';
 
 export default function Page() {
   return (
-    <div className="App">
-      <h1>My Tasks ✅</h1>
-      <KanbanBoard />;
-    </div>
+    <section className='px-8'>
+      <KanbanBoardSample />
+    </section>
   );
 }

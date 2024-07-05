@@ -20,6 +20,7 @@ export interface CollapsibleIconProcess {
 }
 const BacklogItem = (props: CollapsibleIconProcess) => {
   const [openBacklogItem, setIsOpenBacklogItem] = useState<boolean>(false);
+
   return (
     <div className='flex justify-between items-center gap-8 w-full px-8'>
       <Collapsible className='relative flex flex-col w-full justify-between items-start'>
@@ -32,16 +33,17 @@ const BacklogItem = (props: CollapsibleIconProcess) => {
             <CollapsibleTrigger className='font-semibold' onClick={() => setIsOpenBacklogItem(!openBacklogItem)}>{props.headingTitle}</CollapsibleTrigger>
             <div className='text-gray-500 font-medium text-sm'>106 tasks</div>
           </div>
+
           {/** ICON */}
           <div className='flex justify-between items-center gap-2'>
             <AddIcon />
             <MenuIcon />
           </div>
+          
         </div>
         <CollapsibleContent className="w-full CollapsibleContent">
-          {props.content && props.content}
+          {props.content}
         </CollapsibleContent>
-
 
       </Collapsible>
     </div >

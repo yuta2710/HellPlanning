@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Column, Id, Task } from "../../types";
-import TaskCard from "./TaskCard";
+import TaskCardSample from "./TaskCardSample";
 
 interface Props {
   column: Column;
@@ -14,7 +14,7 @@ interface Props {
   tasks: Task[];
 }
 
-const ColumnContainer = ({
+const ColumnSample = ({
   column,
   deleteColumn,
   updateColumn,
@@ -95,7 +95,7 @@ const ColumnContainer = ({
       <div className="flex flex-grow flex-col gap-4 p-2 overflow-x-hidden overflow-y-auto min-h-screen">
         <SortableContext items={tasksIds}>
           {tasks.map((task) => (
-            <TaskCard
+            <TaskCardSample
               key={task.id}
               task={task}
               deleteTask={deleteTask}
@@ -116,4 +116,4 @@ const ColumnContainer = ({
   );
 };
 
-export default ColumnContainer;
+export default ColumnSample;

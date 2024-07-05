@@ -21,19 +21,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
-    <div className='root'>
-      <Sidebar />
-      <div className='root-container'>
-        <Header />
-        {pathname === "/" ? (
-          <div className=''>
-            <PageHeader title={pathname !== "/" ? upperFirst(pathname.split("/")[1]) : "Backlogs"} />
-            {children}
-          </div>
-        ) : (
-          children
-        )}
-      </div>
+    <div className=''>
+      <PageHeader title={pathname !== "/" ? upperFirst(pathname.split("/")[1]) : "Backlogs"} />
+      {children}
     </div>
   )
 }

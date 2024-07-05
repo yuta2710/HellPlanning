@@ -10,6 +10,7 @@ import { darkenColor } from "../../lib/utils"
 import Skeleton from "../ui/skeleton"
 import { mockAvatars2 } from '../../constants'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import LabelHero from "../shared/LabelHero"
 
 
 interface Props {
@@ -41,7 +42,7 @@ const TaskCard = ({ task, deleteTask, updateTask }: Props) => {
   const style = {
     transition,
     transform: CSS.Transform.toString(transform),
-    opacity: isDragging ? 0.5 : 1,
+    opacity: isDragging ? 0 : 1,
     // borderColor: "#9095A1"
   };
 
@@ -49,7 +50,7 @@ const TaskCard = ({ task, deleteTask, updateTask }: Props) => {
     setEditMode((prev) => !prev);
     setMouseIsOver(false);
   };
-
+  
   return (
     <div
       ref={setNodeRef}
@@ -62,7 +63,12 @@ const TaskCard = ({ task, deleteTask, updateTask }: Props) => {
       onMouseLeave={() => setMouseIsOver(false)}
     >
       {task.avatar && task.avatar !== ""
-        ? <Image className="object-cover h-[250px] rounded-xl shadow-xl bg-transparent" src={task.avatar as string | StaticImport} width={250} height={250} alt="" />
+        ? <Image 
+            className="object-cover h-[250px] rounded-xl shadow-xl bg-transparent" 
+            src={task.avatar as string | StaticImport} 
+            width={250} 
+            height={250} 
+            alt={`${task.avatar}`} />
         : <Skeleton className="h-[250px] w-[250px] rounded-xl" />
       }
       {/* {editMode ? (
@@ -91,8 +97,8 @@ const TaskCard = ({ task, deleteTask, updateTask }: Props) => {
 
       <ul className="relative grid grid-cols-4 gap-2">
         {["Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6"].map((label, index) => {
-          return <li key={index} className="bg-[#FDF2F2] text-[#FF0000] rounded px-2 py-1 text-xs">
-            {label}
+          return <li key={index} className="">
+            <LabelHero content={label} bgColor="FDF2F2" color="FF0000" />
           </li>
         })}
       </ul>

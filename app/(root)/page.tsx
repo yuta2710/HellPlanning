@@ -20,39 +20,7 @@ import { mockAvatars } from '@/constants'
 
 export default function Page() {
   return (
-    <div className='w-full min-h-screen'>
-      {/* <div className='flex justify-between items-center p-8'>
-        <div className='flex justify-center items-center'>
-          <h2 className='font-bold text-[32px]'>Backlogs</h2>
-          <Button reststyle='ml-4' icon={<ChevronIcon />} />
-        </div>
-        <div className='flex justify-center items-center gap-8'>
-          <div className='flex justify-center items-center gap-2'>
-            <ProfileIcon />
-            <span className=''>My tickets</span>
-          </div>
-
-          <div className='flex justify-center items-center gap-2'>
-            <FilterIcon />
-            <span className=''>Filter</span>
-          </div>
-
-          <div className='flex justify-center items-center gap-2'>
-            <SortAscendingIcon />
-            <span className=''>Sort</span>
-          </div>
-
-          <div className='flex justify-center items-center gap-2'>
-            <EyeIcon />
-            <span className=''>Views</span>
-          </div>
-
-          <div className='flex justify-center items-center gap-2'>
-            <MenuIcon />
-          </div>
-        </div>
-      </div> */}
-
+    <div className='w-full'>
       <div className='relative flex flex-col justify-center items-start gap-8 w-full bg-cyan-500-2 pb-8'>
         <BacklogItem
           initialIcon={<ChevronRightIcon />}
@@ -66,7 +34,6 @@ export default function Page() {
               <BacklogTaskItem title='Develop API Endpoints' labels={['Gojo', 'Yuta']} avatars={mockAvatars} />
               <BacklogTaskItem title='Write Unit Tests for Backend' labels={['Gojo', 'Yuta']} avatars={mockAvatars} />
               <BacklogTaskItem title='Style User Dashboard' labels={['Gojo', 'Yuta']} avatars={mockAvatars} />
-
             </div>
           )}
         />
@@ -115,3 +82,5 @@ export default function Page() {
     </div>
   )
 }
+
+
