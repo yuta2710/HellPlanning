@@ -16,13 +16,8 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import BacklogTaskItem from "@/components/shared/BacklogTaskItem"
+import { mockAvatars } from '@/constants'
 
-const mockAvatars: string[] = [
-  'https://ywdslchnzrooawwvvdzw.supabase.co/storage/v1/object/public/My%20darling/IMG_7807.jpg',
-  'https://ywdslchnzrooawwvvdzw.supabase.co/storage/v1/object/public/My%20darling/IMG_7809.jpg',
-  'https://ywdslchnzrooawwvvdzw.supabase.co/storage/v1/object/public/My%20darling/IMG_7810.jpg',
-  'https://ywdslchnzrooawwvvdzw.supabase.co/storage/v1/object/public/My%20darling/IMG_7811.png',
-]
 export default function Page() {
   return (
     <div className='w-full min-h-screen'>

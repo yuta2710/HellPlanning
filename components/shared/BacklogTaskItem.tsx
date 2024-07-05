@@ -4,6 +4,7 @@ import React from 'react'
 import { Badge } from "@/components/ui/badge"
 import { darkenColor } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import Skeleton from "@/components/ui/skeleton"
 
 export interface BacklogTaskItemProps {
   _id?: string;
@@ -40,11 +41,13 @@ const BacklogTaskItem = (props: BacklogTaskItemProps) => {
             return (
               <li key={avatar}>
                 <Avatar style={{
-                    width: 28,
-                    height: 28
-                  }} >
+                  width: 28,
+                  height: 28
+                }} >
                   <AvatarImage src={avatar} className='object-cover' />
-                  <AvatarFallback>Mie</AvatarFallback>
+                  <AvatarFallback>
+                    <Skeleton className="h-28 w-28 rounded-full" />
+                  </AvatarFallback>
                 </Avatar>
               </li>
             )

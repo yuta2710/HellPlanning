@@ -56,7 +56,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <div
         className={`flex relative ${props.isFlipped && 'flex-row-reverse'} 
-        
         ${props.bgcolor && `bg-[#${props.bgcolor}]`} ${props.reststyle}`}>
         <Comp
           

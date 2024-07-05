@@ -1,11 +1,11 @@
 "use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { navLinks } from '../../constants'
-import { usePathname } from 'next/navigation'
-import { Separator } from "@/components/ui/separator"
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { navLinks } from '../../constants';
+import { usePathname } from 'next/navigation';
+import { Separator } from '@/components/ui/separator';
 import { Button } from '../ui/button';
 
 const Sidebar = () => {
@@ -24,37 +24,32 @@ const Sidebar = () => {
         <nav className="sidebar-nav w-full">
           <ul className="sidebar-nav_elements">
             {navLinks.map((link) => {
-              return <li key={link.route} className={link.route === pName ? 'sidebar-nav_elements_active' : ''}>
-                <Link href={link.route} className='w-full flex justify-between items-center'>
-                  <div className=''>
-                    <Image src={link.icon} width={24} height={24} alt={link.label} className="icon" />
-                    <span className="ml-3 text-sm font-medium">{link.label}</span>
-                  </div>
-                  <div className='relative bg-[#115467] rounded-full text-white px-[0.4rem] py-[0.05rem] text-center text-[0.8rem]'>8</div>
-                </Link>
-              </li>
-
+              return (
+                <li key={link.route} className={link.route === pName ? 'sidebar-nav_elements_active' : ''}>
+                  <Link href={link.route} className='w-full flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <Image src={link.icon} width={24} height={24} alt={link.label} className="icon" />
+                      <span className="ml-3 text-sm font-medium">{link.label}</span>
+                    </div>
+                    <div className='relative bg-[#115467] rounded-full text-white px-[0.4rem] py-[0.05rem] text-center text-[0.8rem]'>8</div>
+                  </Link>
+                </li>
+              );
             })}
           </ul>
           <Separator className='mt-2' />
-          <div className=''>
-            <div className='flex justify-between items-center p-4'>
-              <h2 className='text-sm font-semibold'>Label</h2>
-              <Button
-                className=''
-                variant={'noneBg'}
-                icon={<Image src={'/assets/add-label.svg'} alt='' width={24} height={24} />}
-                onClick={() => console.log("Pressed")}>
-              </Button>
-            </div>
+          <div className='flex justify-between items-center p-4'>
+            <h2 className='text-sm font-semibold'>Label</h2>
+            <Button
+              variant={'noneBg'}
+              icon={<Image src={'/assets/add-label.svg'} alt='' width={24} height={24} />}
+              onClick={() => console.log("Pressed")}
+            />
           </div>
         </nav>
       </div>
-      
-
     </aside>
+  );
+};
 
-  )
-}
-
-export default Sidebar
+export default Sidebar;

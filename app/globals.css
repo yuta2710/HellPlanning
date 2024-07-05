@@ -143,3 +143,31 @@
     transform: translateY(-1rem);
   }
 }
+
+.column {
+  background-color: #f2f2f3;
+  border-radius: 5px;
+  padding: 15px;
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.App {
+  padding: 2rem;
+}
+
+.task {
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.taskShadow {
+  box-shadow: 0px 0px 2px 0px rgba(23, 26, 31, 0.2);
+}
+
+.lib_shadow_1 {
+  box-shadow: 0px 0px 2px 0px rgba(23, 26, 31, 0.2);
+}

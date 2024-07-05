@@ -9,8 +9,6 @@ import { Separator } from '../ui/separator';
 import SearchIcon from "../../public/assets/search.svg";
 import AddLabelIcon from "../../public/assets/add-label.svg";
 
-
-
 const Header = () => {
   const [querySearch, setQuerySearch] = useState('');
   return (
