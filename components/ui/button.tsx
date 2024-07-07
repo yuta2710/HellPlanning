@@ -18,7 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        noneBg: "bg-transparent",
+        noneBg: "bg-transparent border-[#9095A1]",
         hoverer: "hover:bg-red-500"
       },
       size: {
@@ -40,12 +40,15 @@ export interface ButtonProps
   VariantProps<typeof buttonVariants> {
   bgcolor?: string;
   text?: {
-    color: string;
-    content: string;
+    color?: string;
+    content?: string;
   };
   icon?: React.ReactElement;
   isFlipped?: boolean;
-  reststyle?: string;
+  reststyle?: {
+    container?: string;
+    text?: string
+  };
   asChild?: boolean
 }
 
@@ -56,16 +59,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <div
         className={`flex relative ${props.isFlipped && 'flex-row-reverse'} 
-        ${props.bgcolor && `bg-[#${props.bgcolor}]`} ${props.reststyle}`}>
+        ${props.bgcolor && `bg-[#${props.bgcolor}]`} ${props.reststyle?.container}`}>
         <Comp
-          
           className={`flex justify-center items-center`}  // cn(buttonVariants({ variant, size, className }))
-          // style={{ backgroundColor:  }}
           ref={ref}
           {...props}
         >
           {props.icon && <div className="">{props.icon}</div>}
-          <span className={`ml-2 ${props.text?.color}`}>{props.text?.content}</span>
+          <span className={`${props.reststyle?.text}`} style={{color: `#${props.text?.color}`}}>{props.text?.content}</span>
         </Comp>
       </div>
     )

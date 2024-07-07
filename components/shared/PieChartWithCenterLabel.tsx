@@ -19,7 +19,6 @@ const StyledText = styled('text')(({ theme }) => ({
   fill: theme.palette.text.primary,
   textAnchor: 'middle',
   dominantBaseline: 'central',
-
 }));
 
 function PieCenterLabel({ children }: { children: React.ReactNode }) {
@@ -33,10 +32,10 @@ function PieCenterLabel({ children }: { children: React.ReactNode }) {
 
 export default function PieChartWithCenterLabel() {
   return (
-    <PieChart className='text-sm' series={[{
+    <PieChart colors={["red", "blue", "green", "cyan"]} className='text-sm' series={[{
       data,
       innerRadius: 80,
-
+      
     }]} {...size}>
     </PieChart>
   );

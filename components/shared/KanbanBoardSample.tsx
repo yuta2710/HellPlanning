@@ -160,7 +160,9 @@ const KanbanBoard = () => {
             onClick={() => {
               createNewColumn();
             }}
-            reststyle={'px-4 py-2 rounded-[6px] text-sm hover:scale-[1.05] transition-all'}
+            reststyle={{
+              container: 'px-4 py-2 rounded-[6px] text-sm hover:scale-[1.05] transition-all'
+            }}
             bgcolor='115467'
             text={{ color: 'text-white', content: '+ Add Task' }} />
         </div>
